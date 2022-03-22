@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "298001758215",
+    "project_id": "asistencia-aieup",
+    "storage_bucket": "asistencia-aieup.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:298001758215:android:df66391e5741e34ec112a2",
+        "android_client_info": {
+          "package_name": "asistencia.asistencia"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "298001758215-u2jn433ahgqlitnanara9oobiah9pe2s.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "asistencia.asistencia",
+            "certificate_hash": "c4e10978f212819b3857bc679fa1f1f5f8952217"
+          }
+        },
+        {
+          "client_id": "298001758215-ngmli430v418oovvl8g6ufluo4ei1t03.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAnloKIqwcTMkk5cEWgYqctY7HU5I4kkj4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "298001758215-ngmli430v418oovvl8g6ufluo4ei1t03.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
