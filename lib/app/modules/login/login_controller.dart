@@ -1,5 +1,7 @@
 // ignore_for_file: prefer_function_declarations_over_variables
 
+import 'package:asistencia/app/data/preferences/usuario.dart';
+import 'package:asistencia/app/routes/app_routes.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -8,6 +10,7 @@ class LoginController extends GetxController {
   final FirebaseAuth _auth = FirebaseAuth.instance;
   final TextEditingController numeroCelular = TextEditingController();
   final TextEditingController smsController = TextEditingController();
+  final _prefs = PreferenciasUsuario();
 
   String _verificationId = "";
 
@@ -17,7 +20,7 @@ class LoginController extends GetxController {
       await _auth.signInWithCredential(phoneAuthCredential);
       Get.dialog(
         AlertDialog(
-          title: Text("Verificado"),
+          title: const Text("Verificado"),
           content: Text(
               "Phone number automatically verified and user signed in: ${_auth.currentUser?.uid}"),
         ),
@@ -83,6 +86,10 @@ class LoginController extends GetxController {
           content: Text("Successfully signed in UID: ${user?.uid}"),
         ),
       );
+
+      _prefs.uidUser = user?.uid;
+
+      Get.offNamed(Routes.HOME);
     } catch (e) {
       Get.dialog(
         AlertDialog(

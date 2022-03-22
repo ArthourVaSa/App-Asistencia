@@ -1,3 +1,5 @@
+import 'package:asistencia/app/data/preferences/usuario.dart';
+import 'package:asistencia/app/modules/home/home_page.dart';
 import 'package:asistencia/app/modules/login/login_binding.dart';
 import 'package:asistencia/app/modules/login/login_page.dart';
 import 'package:asistencia/app/routes/app_page.dart';
@@ -12,6 +14,9 @@ void main() async {
   await Firebase.initializeApp();
   DependencyInjection.init();
 
+  final prefs = PreferenciasUsuario();
+  await prefs.initPrefs();
+
   runApp(GetMaterialApp(
     debugShowCheckedModeBanner: false,
     initialRoute: Routes.LOGIN,
@@ -19,6 +24,7 @@ void main() async {
     defaultTransition: Transition.fade,
     initialBinding: LoginBinding(),
     getPages: AppPages.pages,
-    home: const LoginPage(),
+    // ignore: unrelated_type_equality_checks, unnecessary_null_comparison
+    home: prefs.uidUser != null ? const HomePage() : const LoginPage(),
   ));
 }
