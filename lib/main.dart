@@ -1,3 +1,5 @@
+// ignore_for_file: unnecessary_null_comparison
+
 import 'package:asistencia/app/data/preferences/usuario.dart';
 import 'package:asistencia/app/modules/home/home_page.dart';
 import 'package:asistencia/app/modules/login/login_binding.dart';
@@ -24,7 +26,6 @@ void main() async {
     defaultTransition: Transition.fade,
     initialBinding: LoginBinding(),
     getPages: AppPages.pages,
-    // ignore: unrelated_type_equality_checks, unnecessary_null_comparison
-    home: prefs.uidUser != null ? const HomePage() : const LoginPage(),
+    home: prefs.uidUser.isEmpty ? const LoginPage() : HomePage(),
   ));
 }

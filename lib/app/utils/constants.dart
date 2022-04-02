@@ -1,3 +1,3 @@
 class Constants {
-  static const FIREBASE_DATABASE_URL = "";
+  static const FIREBASE_COLECTION = "Iglesias/Sembrador/Clases";
 }

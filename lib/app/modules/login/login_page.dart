@@ -16,7 +16,7 @@ class LoginPage extends StatelessWidget {
         body: SafeArea(
           child: Center(
             child: Container(
-              padding: EdgeInsets.symmetric(horizontal: 20.0),
+              padding: const EdgeInsets.symmetric(horizontal: 20.0),
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 crossAxisAlignment: CrossAxisAlignment.center,

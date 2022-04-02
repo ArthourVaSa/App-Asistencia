@@ -1,5 +1,7 @@
 import 'package:asistencia/app/modules/home/home_binding.dart';
 import 'package:asistencia/app/modules/home/home_page.dart';
+import 'package:asistencia/app/modules/llenado/llenado_binding.dart';
+import 'package:asistencia/app/modules/llenado/llenado_page.dart';
 import 'package:asistencia/app/modules/login/login_binding.dart';
 import 'package:asistencia/app/modules/login/login_page.dart';
 import 'package:asistencia/app/routes/app_routes.dart';
@@ -14,8 +16,13 @@ abstract class AppPages {
     ),
     GetPage(
       name: Routes.HOME,
-      page: () => const HomePage(),
+      page: () => HomePage(),
       binding: HomeBinding(),
+    ),
+    GetPage(
+      name: Routes.LLENADO,
+      page: () => const LlenadoPage(),
+      binding: LlenadoBinding(),
     ),
   ];
 }
