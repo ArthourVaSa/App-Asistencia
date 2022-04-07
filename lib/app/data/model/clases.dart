@@ -1,6 +1,6 @@
 class Clases {
   Clases({
-    required this.id,
+    required this.tipoClase,
     required this.asistencia,
     required this.biblias,
     required this.fecha,
@@ -8,7 +8,7 @@ class Clases {
     required this.visitas,
   });
 
-  final String id;
+  final String tipoClase;
   final String asistencia;
   final String biblias;
   final String fecha;
@@ -16,7 +16,7 @@ class Clases {
   final String visitas;
 
   factory Clases.fromJson(Map<String, dynamic> json) => Clases(
-        id: json["id"],
+        tipoClase: json["id"],
         asistencia: json["asistencia"],
         biblias: json["biblias"],
         fecha: json["fecha"],
@@ -25,7 +25,7 @@ class Clases {
       );
 
   Map<String, dynamic> toJson() => {
-        "id": id,
+        "tipoClase": tipoClase,
         "asistencia": asistencia,
         "biblias": biblias,
         "fecha": fecha,

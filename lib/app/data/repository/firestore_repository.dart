@@ -7,11 +7,20 @@ import '../model/clases.dart';
 class FirestoreRepository {
   final FirebaseFirestore firebaseFirestore = Get.find<FirebaseFirestore>();
 
-  Future<void> addClases(Clases clases, String clase) {
+  Future<DocumentReference> addClases(Clases clases, String clase) {
     return firebaseFirestore
         .collection(Constants.FIREBASE_COLECTION)
-        .doc(clase)
-        .collection(clase)
         .add(clases.toJson());
+  }
+
+  Future<void> getClases(String clase) async {
+    var data = firebaseFirestore
+        .collection(Constants.FIREBASE_COLECTION)
+        .get()
+        .then((value) {
+      value.docs.forEach((element) {
+        print(element.data());
+      });
+    });
   }
 }
