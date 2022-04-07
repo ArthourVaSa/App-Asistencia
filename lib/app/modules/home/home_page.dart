@@ -20,7 +20,7 @@ class HomePage extends StatelessWidget {
       ),
       body: SafeArea(
         child: Column(
-          crossAxisAlignment: CrossAxisAlignment.stretch,
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             ListView.builder(
               shrinkWrap: true,
